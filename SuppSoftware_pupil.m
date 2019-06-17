@@ -1,5 +1,5 @@
 clear; clc;
-load regs_pupil.mat
+load regs_test.mat
 
 %% Figure 1
 close all
@@ -288,20 +288,19 @@ set(gca,'xlim',[.5 4.5],'xtick',1:4,'ylim',[-0.05 0.05],'xticklabel',...
 %% Figure 6
 close all
 clearvars -except regs e*
-load fits.mat
+load fits_test.mat
 
-for s = 1:length(list)
-    sub = list(s);
+for sub = 1:length(regs)
     X = regs(sub).clicksLR';
     y = regs(sub).choiceLR';y(y==-1)= 0;
-    LLs = LLssub{s};
+    LLs = LLssub{sub};
     pr = zeros(length(y),1);
     pr(y==0) = 1-exp(LLs(y==0));
     pr(y==1) = exp(LLs(y==1));
     pl = 1-pr;
-    chddm{s} = double(~binornd(1,pl));
-    betasddm(s,:) = glmfit(X,chddm{s},'binomial','link','logit');
-    betas(s,:) = glmfit(X,y,'binomial','link','logit');
+    chddm{sub} = double(~binornd(1,pl));
+    betasddm(sub,:) = glmfit(X,chddm{sub},'binomial','link','logit');
+    betas(sub,:) = glmfit(X,y,'binomial','link','logit');
 end
 ind_dc = 2:21;
 
