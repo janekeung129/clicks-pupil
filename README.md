@@ -1,6 +1,6 @@
-# Analysis code for Keung, et al. 2019
+# Analysis code for Keung, et al. 2019 Regulation of evidence accumulation by pupil-linked processes
 
-`SuppSoftware_pupil.m` runs all the analyses described in [Keung, et al. 2019][Keung], and reproduces all the 
+`SuppSoftware_pupil.m` runs all the analyses described in [Keung, et al. 2019 Nat. Hum. Beh.][Keung], and reproduces all the 
 main figures in the paper. Running each cell consecutively will generate each analysis/figure in the paper.
 
 `regs_test.mat` contains test data for two participants. Data are organized into a n element struct array 
