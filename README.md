@@ -4,7 +4,7 @@
 main figures in the paper. Running each cell consecutively will generate each analysis/figure in the paper.
 
 `regs_test.mat` contains test data for two participants. Data are organized into a n element struct array 
-(n is the number of participants). Full dataset can be found at https://osf.io/37yk8/
+(n is the number of participants). Full dataset is published at https://osf.io/37yk8/
 
 ```
 Each element has the following fields:
